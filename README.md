@@ -39,7 +39,7 @@ Activate the virtual env first and install the requirements:
 
 ```bash
 source env/bin/activate
-
+pip install -r requirements.txt
 ```
 
 Then run the crawler (using -v will print an INFO message showing you which pages are currently being fetched):
