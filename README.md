@@ -2,7 +2,7 @@
 Simple 1 sub-domain web crawler
 
 ## Notes
-It takes quite a while to crawl a large site like Monzo, I could have sped this up a _lot_ using a
+It takes quite a while to crawl a large site, I could have sped this up a _lot_ using a
 ThreadPoolExecutor and using futures (it's waiting for the pages to be retrieved which takes the time, which is a
 perfect case for futures even with pythons global interpreter lock). However I had already spent a little more than the
 4 hours on the task so I thought it better not to.
