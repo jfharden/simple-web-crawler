@@ -33,7 +33,7 @@ class TestLinkExtractor(unittest.TestCase):
         page = """
         <html>
         <head>
-            <title>Test Page One Link</title>
+            <title>Test Page Two Links</title>
         </head>
         <body>
             <p>
@@ -63,9 +63,6 @@ class TestLinkExtractor(unittest.TestCase):
     def test_extract_relative_urls(self):
         page = """
         <html>
-        <head>
-            <title>Test Page One Link</title>
-        </head>
         <body>
             <p>
                 <a href="foo.html">FooPage</a>
@@ -94,9 +91,6 @@ class TestLinkExtractor(unittest.TestCase):
     def test_extract_includes_external_links(self):
         page = """
         <html>
-        <head>
-            <title>Test Page One Link</title>
-        </head>
         <body>
             <p>
                 <a href="http://www.example.com/foo.html">FooPage</a>
@@ -120,9 +114,6 @@ class TestLinkExtractor(unittest.TestCase):
     def test_discards_invalid_links(self):
         page = """
         <html>
-        <head>
-            <title>Test Page One Link</title>
-        </head>
         <body>
             <p>
                 <a href="ftp://www.example.com/foo.html">FooPage</a>
@@ -144,9 +135,6 @@ class TestLinkExtractor(unittest.TestCase):
     def test_extract_no_links(self):
         page = """
         <html>
-        <head>
-            <title>Test Page One Link</title>
-        </head>
         <body>
         </body>
         </html>
