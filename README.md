@@ -11,9 +11,9 @@ Activate the virtual env first:
 
 `source env/bin/activate`
 
-Then run the crawler:
+Then run the crawler (using -v will print an INFO message showing you which pages are currently being fetched):
 
-`./crawl.py <domain>`
+`./crawl.py -v <domain>`
 
 ## Running tests
 
