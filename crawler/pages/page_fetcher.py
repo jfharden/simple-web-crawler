@@ -17,4 +17,4 @@ class PageFetcher:
         """
         response = requests.get(link.url)
 
-        return Page(link, response)
+        return Page(link, response.text)

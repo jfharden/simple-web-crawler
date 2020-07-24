@@ -1,3 +1,5 @@
+import requests
+import responses
 import unittest
 
 from crawler.links.link import Link
@@ -28,8 +30,16 @@ class TestPageFetcher(unittest.TestCase):
         </html>
     """
 
-    @patch("crawler.pages.page_fetcher.requests.get", return_value=MOCK_PAGE)
-    def test_get(self, mock_requests_get):
+    @responses.activate
+    def test_get(self):
+        responses.add(**{
+            "method": responses.GET,
+            "url": "http://www.example.com/index.html",
+            "body": TestPageFetcher.MOCK_PAGE,
+            "status": 200,
+            "content_type": "application/html",
+        })
+
         expected_out_links = [
                 Link("http://www.example.com/index.html", "/foo.html"),
                 Link("http://www.example.com/index.html", "/sub/page/bar.html"),
@@ -40,4 +50,3 @@ class TestPageFetcher(unittest.TestCase):
 
         self.assertEqual(actual_page.link, expected_link)
         self.assertEqual(actual_page.out_links, expected_out_links)
-        mock_requests_get.assert_called_with("http://www.example.com/index.html")
