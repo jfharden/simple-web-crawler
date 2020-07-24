@@ -38,11 +38,14 @@ Thanks for reading!
 Activate the virtual env first and install the requirements:
 
 ```bash
+python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
 
 Then run the crawler (using -v will print an INFO message showing you which pages are currently being fetched):
+
+Note: You must include the scheme (e.g. http, or https), for example http://www.example.com
 
 `./crawl.py -v <domain>`
 
