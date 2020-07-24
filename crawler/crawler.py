@@ -6,6 +6,13 @@ from crawler.pages.page_fetcher import PageFetcher
 
 
 class Crawler:
+    """Crawls the given domain
+
+        Attributes:
+            site_map: The site map of the crawled domain.
+    """
+    site_map = None
+
     def __init__(self, start_domain):
         """Initialiser
 
